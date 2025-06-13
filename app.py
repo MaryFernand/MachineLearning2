@@ -4,7 +4,7 @@ import numpy as np
 import joblib
 
 # Carregar o modelo salvo
-modelo = joblib.load('modelo_xgboost.pkl')
+modelo = joblib.load('modelo_xgboost.pkl2')
 
 st.title("Previsão de Quantidade de Refeições")
 
