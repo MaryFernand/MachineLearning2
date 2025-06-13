@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-
+from sklearn.base import BaseEstimator, RegressorMixin
 
 class XGBRegressorPositivo(BaseEstimator, RegressorMixin):
     def __init__(self, **kwargs):
