@@ -3,6 +3,26 @@ import pandas as pd
 import numpy as np
 import joblib
 
+
+class XGBRegressorPositivo(BaseEstimator, RegressorMixin):
+    def __init__(self, **kwargs):
+        self.model = xgb.XGBRegressor(**kwargs)
+
+    def fit(self, X, y):
+        self.model.fit(X, y)
+        return self
+
+    def predict(self, X):
+        preds = self.model.predict(X)
+        return np.maximum(preds, 0)
+
+    def get_params(self, deep=True):
+        return self.model.get_params(deep)
+
+    def set_params(self, **params):
+        self.model.set_params(**params)
+        return self
+        
 # Carregar o modelo salvo
 modelo = joblib.load('modelo_xgboost.pkl2')
 
