@@ -166,3 +166,34 @@ if st.button("Prever quantidade"):
         pred = modelo.predict(entrada_df)
 
         st.success(f'Previsão da quantidade: {pred[0]:.0f}')
+
+import streamlit as st
+
+# --- RODAPÉ ---
+st.markdown("---")
+
+# Texto do rodapé justificado
+st.markdown(
+    "<p style='text-align: justify;'>"
+    "Desenvolvido por Maria Fernanda Machado Santos, bolsista PIBIC/CNPq, "
+    "como parte do projeto Aprendizado de Máquina Aplicado à Engenharia, conduzido pelo Instituto Politécnico - UFRJ, "
+    "sob orientação da professora Janaina Sant'Anna Gomide Gomes."
+    "</p>",
+    unsafe_allow_html=True
+)
+
+# Colunas para imagens lado a lado
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.markdown(
+        "<img src='https://raw.githubusercontent.com/MaryFernand/MachineLearning2/bb0369bb62ec5edd4a093d9ad19214093ae91e39/ufrja.png' "
+        "style='width:150px; margin-top:-10px;'>",
+        unsafe_allow_html=True
+    )
+with col2:
+    st.image("https://raw.githubusercontent.com/MaryFernand/MachineLearning2/bb0369bb62ec5edd4a093d9ad19214093ae91e39/ufrj_macae.png", width=150)
+with col3:
+    st.image("https://raw.githubusercontent.com/MaryFernand/MachineLearning2/bb0369bb62ec5edd4a093d9ad19214093ae91e39/instituto_politecnico.png", width=150)
+with col4:
+    st.image("https://raw.githubusercontent.com/MaryFernand/MachineLearning2/bb0369bb62ec5edd4a093d9ad19214093ae91e39/cnpq.png", width=150)
